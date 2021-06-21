@@ -6,6 +6,7 @@ describe Bookmark do
       bookmarks = Bookmark.all
       expect(bookmarks).to include("Google")
       expect(bookmarks).to include("Makers Academy")
+      expect(bookmarks).to include("Github")
     end
   end
 end

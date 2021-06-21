@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require "./lib/bookmark"
 
 class BookmarkManager < Sinatra::Base
   enable :sessions
@@ -14,7 +15,7 @@ class BookmarkManager < Sinatra::Base
 
   get "/bookmarks" do
     @bookmarks = Bookmark.all
-    erb :'bookmarks/index'
+    erb :bookmarks
   end
 
   # start the server if ruby file executed directly
