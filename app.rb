@@ -9,14 +9,22 @@ class BookmarkManager < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get "/" do
+  get '/' do
     erb :index
   end
 
-  get "/bookmarks" do
+  get '/bookmarks' do
     @bookmarks = Bookmark.all
     erb :bookmarks
   end
+
+  post '/add' do
+    url = params[:url]
+    Bookmark.add(url)
+    redirect '/bookmarks'
+  end
+
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0
