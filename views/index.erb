@@ -1,9 +1,12 @@
 <h1>Bookmark Manager</h1>
 
-<h3><a href='/bookmarks'>View all bookmarks</a></h3>
-
 <h3>Add a bookmark:</h3>
 <form action='/add' method='post'>
+<input type='text' name='title' placeholder='Title'> 
 <input type='text' name='url' placeholder='URL'> 
 <button type='submit'>Add</button>
 </form>
+
+<br>
+
+<h3><a href='/bookmarks'>View all bookmarks</a></h3>
